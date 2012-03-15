@@ -69,7 +69,7 @@ public class Login extends JPanel implements ActionListener {
 		
 		
 		frame.add(login);
-		fame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.pack();
 		frame.setSize(350,170);
