@@ -1,7 +1,7 @@
 package gruppe35.gui;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
+//import java.awt.Dimension;
+//import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -75,9 +75,9 @@ public class Login extends JPanel implements ActionListener {
 		frame.setSize(350,170);
 		frame.setResizable(false);
 		
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		int height = screenSize.height;
-		int width = screenSize.width;
+//		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+//		int height = screenSize.height;
+//		int width = screenSize.width;
 		  
 		frame.setLocationRelativeTo(null);
 		
@@ -86,8 +86,8 @@ public class Login extends JPanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		frame.dispose();
 		frame.setContentPane(new CalendarView());
-		//frame.revalidate();
 		
 	}
 	
