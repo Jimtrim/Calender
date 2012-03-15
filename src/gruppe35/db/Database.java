@@ -32,11 +32,16 @@ public class Database {
 		}
 	}
 	
-	
+	/**
+	 * Login to database, takes two args
+	 * @param user: String
+	 * @param password : String
+	 */
 	public String login(String user,String password){
 		String feedback = "";
 		String query = "SELECT _field_user_,_field_password_ FROM "+
-				"_table_ WHERE _field_user = "+user+ " AND "+"_field_password_ = "+password;
+				"_table_ WHERE _field_user = "+user+ " AND "
+				+"_field_password_ = "+password;
 		
 		try {
 			ResultSet rs = connect.createStatement().executeQuery(query);
