@@ -8,9 +8,9 @@ import com.mysql.jdbc.Connection;
 
 public class Database {
 	private String driver = "com.mysql.jdbc.Driver";
-	private String host = "jdbc:mysql://mysql.stud.ntnu.no/____";
-	private String user = "";
-	private String pass = "";
+	private String host = "jdbc:mysql://mysql.stud.ntnu.no/vikre_fellesp";
+	private String user = "vikre_fp";
+	private String pass = "Fellesprosjekt1";
 	private Connection connect;
 	
 	
@@ -39,14 +39,15 @@ public class Database {
 	 */
 	public String login(String user,String password){
 		String feedback = "";
-		String query = "SELECT _field_user_,_field_password_ FROM "+
-				"_table_ WHERE _field_user = "+user+ " AND "
-				+"_field_password_ = "+password;
+		String query = "SELECT email,passord FROM "+
+				"Ansatt WHERE email = '"+user+ "' AND "
+				+"passord = '"+password+"'";
 		
 		try {
 			ResultSet rs = connect.createStatement().executeQuery(query);
 			if(rs.first()){
 				feedback = rs.getString(1);
+				//feedback+= " " +rs.getString(2); passord
 			}
 			else{
 				feedback = "No match";
@@ -56,5 +57,11 @@ public class Database {
 			e.getStackTrace();
 		}
 		return feedback;
+	}
+	
+	public static void main(String[] args) {
+		Database db = new Database();
+		String out = db.login("test@test.com", "test");
+		System.out.println(out);
 	}
 }
