@@ -69,7 +69,7 @@ public class Login extends JPanel implements ActionListener {
 		
 		
 		frame.add(login);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		fame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.pack();
 		frame.setSize(350,170);
@@ -87,7 +87,7 @@ public class Login extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		frame.dispose();
-		frame.setContentPane(new CalendarView());
+		frame.setContentPane(new Controller());
 		
 	}
 	

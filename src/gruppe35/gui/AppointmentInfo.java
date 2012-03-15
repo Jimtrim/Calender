@@ -108,17 +108,19 @@ public class AppointmentInfo extends JPanel implements ActionListener {
         cancel.addActionListener(this);
         c.gridx = 2;
         this.add(cancel,c);
+        
+        
 	}
 	
 	
-	public static void main(String[] args) {		
-		JFrame jframe = new JFrame("TESTING");
-		jframe.add(new AppointmentInfo());
-		jframe.pack();
-		jframe.setVisible(true);
-		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-	
+//	public static void main(String[] args) {		
+//		JFrame jframe = new JFrame("TESTING");
+//		jframe.add(new AppointmentInfo());
+//		jframe.pack();
+//		jframe.setVisible(true);
+//		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//	}
+//	
 
 	
 	@Override

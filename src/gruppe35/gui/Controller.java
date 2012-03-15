@@ -6,59 +6,41 @@ import java.beans.PropertyChangeSupport;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 
-public class Controller extends JFrame implements PropertyChangeListener {
+public class Controller extends JFrame {
 
-	public static JPanel currentGUI;
-	public static JPanel lastGUI;
-	public static boolean GUIChange = false;
-	PropertyChangeSupport listener;
-	
-	public static void changeGUI(JPanel panel){
-		lastGUI = currentGUI;
-		currentGUI = panel;
-		GUIChange = true;
-		
-	}
+	private JTabbedPane tabpane;
+	private JPanel calendar, createAppointment;
 	
 	
-	
-	public void setGUI(){
-		if(GUIChange == true){
-			this.add(currentGUI);
-			GUIChange = false;
-		}
-	}
+
 	
 	public Controller(){
-		currentGUI = new Login();
-		this.add(currentGUI);
 		
+		calendar = new CalendarView();
+		createAppointment = new AppointmentInfo();
 		
+		tabpane = new JTabbedPane();
+		tabpane.add("Calendar", calendar);
+		tabpane.add("Ny Avtale", createAppointment);
 		
-		
+		this.add(tabpane);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 		this.setSize(500,500);
 		this.setResizable(false);
-		
+		this.setLocationRelativeTo(null);
 		
 		
 	}
 	
 	
 	
-	public static void main(String[] args) {
-		new Controller();
-	}
+	
 
 
 
-	@Override
-	public void propertyChange(PropertyChangeEvent evt) {
-		setGUI();
-		
-	}
 	
 }
 

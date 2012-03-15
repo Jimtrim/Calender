@@ -17,7 +17,7 @@ public class Database {
 	/**
 	 * Creates a connection to the database
 	 * @throws SQLException
-	 * @throws {@link ClassNotFoundException}
+	 * @throws {@link ClassNotFoundException}	
 	 */
 	public Database() {
 		try {

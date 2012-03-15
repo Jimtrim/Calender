@@ -16,19 +16,19 @@ public class CalendarView extends JPanel {
 		label = new JLabel("Welcome");
 		add(label);
 		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-		frame.pack();
+//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		frame.setVisible(true);
+//		frame.pack();
 //		frame.setSize(350,170);
-		frame.setResizable(false);
-		
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		int height = screenSize.height;
-		int width = screenSize.width;
-		frame.setSize(width/2, height/2);
-		
-		frame.setLocationRelativeTo(null);
-		//test
+//		frame.setResizable(false);
+//		
+//		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+//		int height = screenSize.height;
+//		int width = screenSize.width;
+//		frame.setSize(width/2, height/2);
+//		
+//		frame.setLocationRelativeTo(null);
+	
 	}
 	
 }
