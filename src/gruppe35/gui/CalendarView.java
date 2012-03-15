@@ -28,6 +28,7 @@ public class CalendarView extends JPanel {
 		frame.setSize(width/2, height/2);
 		
 		frame.setLocationRelativeTo(null);
+		//test
 	}
 	
 }
