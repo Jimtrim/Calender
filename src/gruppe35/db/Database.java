@@ -1,11 +1,16 @@
 package gruppe35.db;
 
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import com.mysql.jdbc.Connection;
+
 public class Database {
-	private String driver = "";
+	private String driver = "com.mysql.jdbc.Driver";
 	private String host = "jdbc:mysql://mysql.stud.ntnu.no/____";
 	private String user = "";
 	private String pass = "";
-	//private Connection connect;
+	private Connection connect;
 	
 	
 	/**
@@ -17,7 +22,7 @@ public class Database {
 		try {
 			//Load driver and connect
 			Class.forName(driver);
-			connect = DriverManager.getConnection(host, user, pass);
+			connect = (Connection) DriverManager.getConnection(host, user, pass);
 
 		} catch(ClassNotFoundException err){
 			//TODO:ERROR handling
@@ -25,4 +30,7 @@ public class Database {
 			//TODO: ERROR handling
 		}
 	}
+	
+	
+	
 }
