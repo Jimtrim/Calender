@@ -1,2 +1,15 @@
-/bin
-/Log
+# Ignore eclipse files:
+.settings/
+.classpath
+.project
+
+# Ignore the build directory:
+build/
+
+# Ignore bin folder:
+bin/
+
+# Ignore vim swap files:
+.*.swo
+.*.swp
+
