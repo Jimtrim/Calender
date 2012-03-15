@@ -8,5 +8,21 @@ public class Database {
 	//private Connection connect;
 	
 	
-	
+	/**
+	 * Creates a connection to the database
+	 * @throws SQLException
+	 * @throws {@link ClassNotFoundException}
+	 */
+	public Database() {
+		try {
+			//Load driver and connect
+			Class.forName(driver);
+			connect = DriverManager.getConnection(host, user, pass);
+
+		} catch(ClassNotFoundException err){
+			//TODO:ERROR handling
+		} catch(SQLException sq) {
+			//TODO: ERROR handling
+		}
+	}
 }
