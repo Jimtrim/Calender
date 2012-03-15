@@ -2,6 +2,8 @@ package gruppe35.gui;
 
 //import java.awt.Dimension;
 //import java.awt.Toolkit;
+import gruppe35.db.Database;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,8 +19,8 @@ public class Login extends JPanel implements ActionListener {
 	private JLabel usernameLabel;
 	private JLabel passwordLabel;
 	
-	private JTextField username;
-	private JTextField password;
+	public JTextField username;
+	public JTextField password;
 	private JButton login;
 	private SpringLayout layout;
 	private static JFrame frame = new JFrame("Login");
@@ -86,6 +88,12 @@ public class Login extends JPanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		Database db = new Database();
+		String info = db.login(this.username.getText(), this.password.getText());
+		if(info.equals("No match")){
+			System.out.println("KUnne ikke logge inn");
+		}
+		
 		frame.dispose();
 		frame.setContentPane(new Controller());
 		
