@@ -8,9 +8,9 @@ import com.mysql.jdbc.Connection;
 
 public class Database {
 	private String driver = "com.mysql.jdbc.Driver";
-	private String host = "jdbc:mysql://mysql.stud.ntnu.no/____";
-	private String user = "";
-	private String pass = "";
+	private String host = "jdbc:mysql://mysql.stud.ntnu.no/vikre_fellesp";
+	private String user = "vikre_fp";
+	private String pass = "Fellesprosjekt1";
 	private Connection connect;
 	
 	
@@ -40,8 +40,8 @@ public class Database {
 	public String login(String user,String password){
 		String feedback = "";
 		String query = "SELECT _field_user_,_field_password_ FROM "+
-				"_table_ WHERE _field_user = "+user+ " AND "
-				+"_field_password_ = "+password;
+				"_table_ WHERE _field_user = '"+user+ "' AND "
+				+"_field_password_ = '"+password+"'";
 		
 		try {
 			ResultSet rs = connect.createStatement().executeQuery(query);
